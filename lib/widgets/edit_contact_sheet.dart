@@ -162,7 +162,7 @@ class _EditContactState extends State<EditContact> {
                         )
                       : const Center(
                           child: CircularProgressIndicator(
-                            color: backGround,
+                            color: white,
                           ),
                         ),
                 ),

@@ -148,7 +148,7 @@ class _AddContactSheetState extends State<AddContactSheet> {
                         )
                       : const Center(
                           child: CircularProgressIndicator(
-                            color: Colors.grey,
+                            color: white,
                           ),
                         ),
                 ),

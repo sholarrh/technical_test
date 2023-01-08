@@ -43,7 +43,7 @@ class _ContactCardState extends State<ContactCard> {
             widget.phone,
             fontSize: 16,
           ),
-          leading: Icon(Icons.contacts),
+          leading: const Icon(Icons.contacts),
           trailing: SizedBox(
             child: Row(
               mainAxisSize: MainAxisSize.min,
@@ -69,22 +69,22 @@ class _ContactCardState extends State<ContactCard> {
                                 user: widget.user,
                               ));
                     },
-                    icon: Icon(Icons.edit)),
+                    icon: const Icon(Icons.edit)),
 
                 GestureDetector(
                   onTap: () {
                     try {
                      // if (data.deleteResponse.statusCode == 200) {
                         data.delete(widget.sId);
-                        data.getContact();
-                        setState(() {
-                        });
+                        // data.getContact();
+                        // setState(() {
+                        // });
                      // }
                     }catch(e){
                       print(e.toString());
                     }
                   },
-                  child: Icon(
+                  child: const Icon(
                     Icons.delete,
                     color: Colors.red,
                   ),

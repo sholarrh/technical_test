@@ -41,7 +41,7 @@ class _AllContactsState extends State<AllContacts> {
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.5,
+                  height: MediaQuery.of(context).size.height,
                   child: Center(
                     child: SizedBox(
                       height: 50,
@@ -65,6 +65,7 @@ class _AllContactsState extends State<AllContacts> {
                         },
                         child: ListView.builder(
                           shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
                           // reverse: true,
                           itemCount: data.contactList.length,
                           itemBuilder: (context, index) {
@@ -82,11 +83,17 @@ class _AllContactsState extends State<AllContacts> {
                         ),
                       )
                 : Center(
-                  child: MyText(
-                    'You have no contacts',
-                    color: white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w400,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      MyText(
+                        'You have no contacts',
+                        color: Colors.grey,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ],
                   ),
                 ),
                 const SizedBox(
